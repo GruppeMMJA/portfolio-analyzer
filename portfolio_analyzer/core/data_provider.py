@@ -505,13 +505,11 @@ class YFinanceProvider(DataProvider):
         return df.iloc[:, 0].dropna()
 
     def is_available(self) -> bool:
-        """Test actual connectivity by fetching one known ticker."""
+        """Check if yfinance is importable (connectivity tested on first real use)."""
         try:
-            import yfinance as yf
-            t = yf.Ticker("AAPL")
-            info = t.info or {}
-            return bool(info.get("quoteType") or info.get("symbol"))
-        except Exception:
+            import yfinance as yf  # noqa: F401
+            return True
+        except ImportError:
             return False
 
     @staticmethod
