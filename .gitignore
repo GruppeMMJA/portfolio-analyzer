@@ -1,0 +1,28 @@
+# Secrets — NIEMALS auf GitHub hochladen!
+.streamlit/secrets.toml
+**/secrets.toml
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# Lokale Portfolio-Daten
+.portfolio_analyzer/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+*.egg-info/
